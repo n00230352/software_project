@@ -12,7 +12,8 @@ class CommunityController extends Controller
      */
     public function index()
     {
-        //
+        $communities = Community::all();//gets the communities
+        return view('communities.index',compact('communities'));
     }
 
     /**
