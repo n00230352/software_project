@@ -12,7 +12,7 @@
                     <h3 class = "font-semibold text-lg mb-4">Donations history:</h3>
                     <div class="grid gri-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         @foreach($books as $books)
-                            <x-community-card
+                            <x-book-card
                             :title="$book->title"
                             :condition="$book->condition"
                             :donation="$book->donation->id"

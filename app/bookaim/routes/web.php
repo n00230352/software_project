@@ -19,8 +19,13 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    //communities
     Route::get('/communities',[CommunityController::class, 'index'])->name('communities.index');
+
+    //books
     Route::get('/books',[BookController::class, 'index'])->name('books.index');
+    Route::get('/books/create',[BookController::class, 'create'])->name('books.create');
+
     // Route::get('/communities/create',[CommunityController::class, 'create'])->name('communities.create');
     // Route::get('/communities',[CommunityController::class, 'store'])->name('communities.store');
     // Route::get('/communities/{community}',[CommunityController::class, 'show'])->name('communities.show');

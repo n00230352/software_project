@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class book extends Model
 {
-    //
+    use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'condition',
+        'school_community_id', 
+    ];
 }
