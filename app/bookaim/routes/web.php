@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CommunityController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\ProfileController;
 //use App\Http\Controllers\DonationController;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/communities',[CommunityController::class, 'index'])->name('communities.index');
+    Route::get('/books',[BookController::class, 'index'])->name('books.index');
     // Route::get('/communities/create',[CommunityController::class, 'create'])->name('communities.create');
     // Route::get('/communities',[CommunityController::class, 'store'])->name('communities.store');
     // Route::get('/communities/{community}',[CommunityController::class, 'show'])->name('communities.show');

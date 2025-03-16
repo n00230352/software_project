@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('communities.index')" :active="request()->routeIs('communities.index')">
                         {{ __('View all communities') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('books.index')" :active="request()->routeIs('books.index')">
+                        {{ __('Donations history') }}
+                    </x-nav-link>
                 </div>
             </div>
 
