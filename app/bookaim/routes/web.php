@@ -23,8 +23,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/communities',[CommunityController::class, 'index'])->name('communities.index');
 
     //books
-    Route::get('/books',[BookController::class, 'index'])->name('books.index');
-    Route::get('/books/create',[BookController::class, 'create'])->name('books.create');
+    // Route::get('/books',[BookController::class, 'index'])->name('books.index');
+    // Route::get('/books/create',[BookController::class, 'create'])->name('books.create');
 
     // Route::get('/communities/create',[CommunityController::class, 'create'])->name('communities.create');
     // Route::get('/communities',[CommunityController::class, 'store'])->name('communities.store');
