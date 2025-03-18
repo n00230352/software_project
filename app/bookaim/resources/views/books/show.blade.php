@@ -1,3 +1,3 @@
 <div>
-    <!-- It is never too late to be what you might have been. - George Eliot -->
+    <!-- He who is contented is rich. - Laozi -->
 </div>
