@@ -3,7 +3,7 @@
 use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\ProfileController;
-//use App\Http\Controllers\DonationController;
+use App\Http\Controllers\DonationController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,6 +24,11 @@ Route::middleware('auth')->group(function () {
 
     //books
     Route::get('/books',[BookController::class, 'index'])->name('books.index');
+
+    //donations
+    Route::get('/donate', [DonationController::class, 'create'])->name('donate.create');
+    Route::post('/donate', [DonationController::class, 'store'])->name('donate.store');
+    
     // Route::get('/books/create',[BookController::class, 'create'])->name('books.create');
 
     // Route::get('/communities/create',[CommunityController::class, 'create'])->name('communities.create');

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Community;
+use App\Models\Book;
 use App\Models\Donation;
 use Illuminate\Http\Request;
 
@@ -20,7 +22,8 @@ class DonationController extends Controller
      */
     public function create()
     {
-        //
+        $communities = Community::all();
+        return view('donate.create', compact('communities'));
     }
 
     /**
@@ -28,7 +31,27 @@ class DonationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'community_id' => 'required|exists:communities,id',
+            'title' => 'required|string|max:255',
+            'condition' => 'required|string|max:255',
+            'notes' => 'nullable|string|max:500',
+        ]);
+
+
+        $donation = Donation::create([
+            'community_id' => $request->community_id,
+            'notes' => $request->notes,
+        ]);
+
+
+        Book::create([
+            'title' => $request->title,
+            'condition' => $request->condition,
+            'donation_id' => $donation->id,
+        ]);
+
+        return redirect()->route('donate.create')->with('success', 'Book donated successfully!');
     }
 
     /**

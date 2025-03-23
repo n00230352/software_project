@@ -21,6 +21,9 @@
                     <x-nav-link :href="route('books.index')" :active="request()->routeIs('books.index')">
                         {{ __('View all books') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('donate.create')" :active="request()->routeIs('donate.create')">
+                        {{ __('Donate a Book') }}
+                    </x-nav-link>
                 </div>
             </div>
 
