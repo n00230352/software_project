@@ -13,9 +13,10 @@
                     <div class="grid gri-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         @foreach($books as $book)
                             <x-book-card
-                            :name="$book->title"
-                            :info="$book->condition"
-                            :location="$book->donation->community->location"
+                                :name="$book->title"
+                                :condition="$book->condition"
+                                :location="$book->donation->community->location"
+                                :notes="$book->donation->notes"
                             />
                         @endforeach
                     </div>
