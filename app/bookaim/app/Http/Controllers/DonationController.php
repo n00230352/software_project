@@ -23,7 +23,7 @@ class DonationController extends Controller
     public function create()
     {
         $communities = Community::all();
-        return view('donate.create', compact('communities'));
+        return view('donations.create', compact('communities'));
     }
 
     /**
@@ -40,6 +40,7 @@ class DonationController extends Controller
 
 
         $donation = Donation::create([
+            // 'user_id' => auth()->id(),
             'community_id' => $request->community_id,
             'notes' => $request->notes,
         ]);
@@ -51,7 +52,7 @@ class DonationController extends Controller
             'donation_id' => $donation->id,
         ]);
 
-        return redirect()->route('donate.create')->with('success', 'Book donated successfully!');
+        return redirect()->route('donations.create')->with('success', 'Book donated successfully!');
     }
 
     /**

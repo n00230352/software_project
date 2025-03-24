@@ -26,9 +26,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/books',[BookController::class, 'index'])->name('books.index');
 
     //donations
-    Route::get('/donate', [DonationController::class, 'create'])->name('donate.create');
-    Route::post('/donate', [DonationController::class, 'store'])->name('donate.store');
-    
+    Route::get('/donations/create', [DonationController::class, 'create'])->name('donations.create');
+    Route::post('/donations', [DonationController::class, 'store'])->name('donations.store');
+
     // Route::get('/books/create',[BookController::class, 'create'])->name('books.create');
 
     // Route::get('/communities/create',[CommunityController::class, 'create'])->name('communities.create');

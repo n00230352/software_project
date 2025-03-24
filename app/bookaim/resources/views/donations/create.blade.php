@@ -14,7 +14,7 @@
                     <h3 class="font-semibold text-lg mb-4">Add a New Donation:</h3>
 
                     <!-- Donation form -->
-                    <form method="POST" action="{{ route('donate.store') }}">
+                    <form method="POST" action="{{ route('donations.store') }}">
                         @csrf
 
                         <!-- Community selection -->

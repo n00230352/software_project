@@ -1,6 +1,6 @@
 @props(['communities'])
 
-<form method="POST" action="{{ route('donate.store') }}">
+<form method="POST" action="{{ route('donations.store') }}">
     @csrf
 
     <!-- Book title -->

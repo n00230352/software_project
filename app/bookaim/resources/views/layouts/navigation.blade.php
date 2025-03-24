@@ -124,13 +124,13 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <x-nav-link :href="route('communities.index')" :active="request()->routeIs('communities.index')" class="text-white hover:text-gray-200">
-                        {{ __('All Communities') }}
+                        {{ __('All our Communities') }}
                     </x-nav-link>
                     <x-nav-link :href="route('books.index')" :active="request()->routeIs('books.index')" class="text-white hover:text-gray-200">
-                        {{ __('All Books') }}
+                        {{ __('Donation history') }}
                     </x-nav-link>
                     <!-- Donate a Book as a Button (White with Black Text) -->
-                    <a href="{{ route('donate.create') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-black bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
+                    <a href="{{ route('donations.create') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-black bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
                         {{ __('Donate a Book') }}
                     </a>
                 </div>
@@ -190,7 +190,7 @@
             <x-responsive-nav-link :href="route('books.index')" :active="request()->routeIs('books.index')" class="text-red-600">
                 {{ __('All Books') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('donate.create')" :active="request()->routeIs('donate.create')" class="text-red-600">
+            <x-responsive-nav-link :href="route('donations.create')" :active="request()->routeIs('donations.create')" class="text-red-600">
                 {{ __('Donate a Book') }}
             </x-responsive-nav-link>
         </div>
