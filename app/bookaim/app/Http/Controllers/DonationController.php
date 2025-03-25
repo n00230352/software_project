@@ -40,7 +40,8 @@ class DonationController extends Controller
 
 
         $donation = Donation::create([
-            // 'user_id' => auth()->id(),
+            //
+            'user_id' => auth()->id(),
             'community_id' => $request->community_id,
             'notes' => $request->notes,
         ]);
@@ -51,8 +52,6 @@ class DonationController extends Controller
             'condition' => $request->condition,
             'donation_id' => $donation->id,
         ]);
-
-        return redirect()->route('donations.create')->with('success', 'Book donated successfully!');
     }
 
     /**
