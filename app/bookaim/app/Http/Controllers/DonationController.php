@@ -14,7 +14,8 @@ class DonationController extends Controller
      */
     public function index()
     {
-        //
+        $donations = Donation::all();
+        return view('donations.index', compact('donations'));
     }
 
     /**
@@ -52,6 +53,8 @@ class DonationController extends Controller
             'condition' => $request->condition,
             'donation_id' => $donation->id,
         ]);
+
+        return redirect()->route('donations.index');
     }
 
     /**

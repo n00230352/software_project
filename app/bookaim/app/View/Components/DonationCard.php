@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
 
-class DonationForm extends Component
+class DonationCard extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class DonationForm extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.donation-form');
+        return view('components.donation-card');
     }
 }

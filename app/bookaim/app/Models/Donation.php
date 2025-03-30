@@ -21,8 +21,8 @@ class Donation extends Model
         return $this->belongsTo(Community::class);
     }
 
-    // public function books()
-    // {
-    //     return $this->hasMany(Book::class);
-    // }
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
 }

@@ -1,9 +1,10 @@
 <?php
 
 use App\Http\Controllers\CommunityController;
-use App\Http\Controllers\BookController;
+//use App\Http\Controllers\BookController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DonationController;
+use App\Models\Donation;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,10 +23,8 @@ Route::middleware('auth')->group(function () {
     //communities
     Route::get('/communities',[CommunityController::class, 'index'])->name('communities.index');
 
-    //books
-    Route::get('/books',[BookController::class, 'index'])->name('books.index');
-
     //donations
+    Route::get('/donations', [DonationController::class, 'index'])->name('donations.index');
     Route::get('/donations/create', [DonationController::class, 'create'])->name('donations.create');
     Route::post('/donations', [DonationController::class, 'store'])->name('donations.store');
 

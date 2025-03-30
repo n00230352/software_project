@@ -126,7 +126,7 @@
                     <x-nav-link :href="route('communities.index')" :active="request()->routeIs('communities.index')" class="text-white hover:text-gray-200">
                         {{ __('All our Communities') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('books.index')" :active="request()->routeIs('books.index')" class="text-white hover:text-gray-200">
+                    <x-nav-link :href="route('donations.index')" :active="request()->routeIs('donations.index')" class="text-white hover:text-gray-200">
                         {{ __('Donation history') }}
                     </x-nav-link>
                     <!-- Donate a Book as a Button (White with Black Text) -->
@@ -187,8 +187,8 @@
             <x-responsive-nav-link :href="route('communities.index')" :active="request()->routeIs('communities.index')" class="text-red-600">
                 {{ __('All Communities') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('books.index')" :active="request()->routeIs('books.index')" class="text-red-600">
-                {{ __('All Books') }}
+            <x-responsive-nav-link :href="route('donations.index')" :active="request()->routeIs('donations.index')" class="text-red-600">
+                {{ __('Donation history') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('donations.create')" :active="request()->routeIs('donations.create')" class="text-red-600">
                 {{ __('Donate a Book') }}
