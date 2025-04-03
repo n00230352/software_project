@@ -107,41 +107,12 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
     <div class="container">
-        <!-- Logo -->
         <a class="navbar-brand" href="{{ route('dashboard') }}">BookAim</a>
-
-        <!-- Navbar links (non-collapsing) -->
         <div class="navbar-nav ms-auto">
-            <!-- Dashboard link -->
             <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
-
-            <!-- All Communities link -->
-            <a class="nav-link" href="{{ route('communities.index') }}">All our Communities</a>
-
-            <!-- Donation History link -->
-            <a class="nav-link" href="{{ route('donations.index') }}">Donation history</a>
-
-            <!-- Donate a Book button (styled like a button) -->
-            <a class="btn btn-light" href="{{ route('donations.create') }}">Donate a Book</a>
-
-            <!-- Dropdown for profile and logout -->
-            <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    {{ Auth::user()->name }}
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a></li>
-                    <li>
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                            <button type="submit" class="dropdown-item">Log Out</button>
-                        </form>
-                    </li>
-                </ul>
-            </div>
+            <a class="nav-link" href="{{ route('communities.index') }}">Communities</a>
+            <a class="nav-link" href="{{ route('donations.index') }}">History</a>
+            <a class="btn btn-light" href="{{ route('donations.create') }}">Donate</a>
         </div>
     </div>
 </nav>
-
-<!-- Add Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
