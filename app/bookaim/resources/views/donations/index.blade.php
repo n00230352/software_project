@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class = "font-semibold text-xl text gray-800 leading-tight">
-            {{__('All books') }}
+            {{ __('All books') }}
         </h2>
     </x-slot>
 
@@ -11,13 +11,11 @@
                 <div class="p-6 text-gray-900">
                     <h3 class = "font-semibold text-lg mb-4">List of :</h3>
                     <div class="grid gri-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        @foreach($donations as $donation)
-                            <x-donation-card
-                                :name="$donation->title"
-                                :condition="$donation->condition"
-                                :location="$donation->donation->community->location"
-                                :notes="$donation->donation->notes"
-                            />
+
+                        @foreach ($donations as $donation)
+                            {{ $donation->notes }}
+
+                            {{ $donation->book }}
                         @endforeach
                     </div>
                 </div>

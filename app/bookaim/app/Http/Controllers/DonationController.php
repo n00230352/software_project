@@ -24,6 +24,7 @@ class DonationController extends Controller
     public function create()
     {
         $communities = Community::all();
+
         return view('donations.create', compact('communities'));
     }
 
@@ -54,7 +55,8 @@ class DonationController extends Controller
             'donation_id' => $donation->id,
         ]);
 
-        return redirect()->route('donations.index');
+
+        return redirect()->route('books.index');
     }
 
     /**
@@ -63,6 +65,7 @@ class DonationController extends Controller
     public function show(Donation $donation)
     {
         //
+
     }
 
     /**
