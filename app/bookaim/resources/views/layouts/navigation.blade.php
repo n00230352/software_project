@@ -109,7 +109,7 @@
     <div class="container">
         <a class="navbar-brand" href="{{ route('dashboard') }}">BookAim</a>
         <div class="navbar-nav ms-auto">
-            <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+            <a class="nav-link" href="{{ route('dashboard') }}">Home</a>
             <a class="nav-link" href="{{ route('communities.index') }}">Communities</a>
             <a class="nav-link" href="{{ route('books.index') }}">History</a>
             <a class="btn btn-light" href="{{ route('donations.create') }}">Donate</a>
