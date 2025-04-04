@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');  // User who donates the book
             $table->foreignId('community_id')->constrained()->onDelete('cascade');  // Community that recives donation
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');  // User who donates the book
             $table->text('notes')->nullable();  // Optional notes about the donation
             $table->timestamps();
         });
