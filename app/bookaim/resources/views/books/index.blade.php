@@ -29,7 +29,7 @@
     <div class="container" style="padding-top: 40px; padding-bottom: 40px;">
         <div class="text-center" style="margin-bottom: 32px;">
             <h3 class="text-danger fw-bold" style="font-size: 28px;">All Books</h3>
-            <p class="text-muted" style="font-size: 16px;">Browse through the collection of books available.</p>
+            <p class="text-muted" style="font-size: 16px;">Browse through your donayion history.</p>
         </div>
         <div class="row" style="gap: 16px;">
             @foreach ($books as $book)

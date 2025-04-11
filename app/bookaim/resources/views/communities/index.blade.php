@@ -30,9 +30,9 @@
             <h3 class="text-danger fw-bold" style="font-size: 28px;">Discover Communities to Help</h3>
             <p class="text-muted" style="font-size: 16px;">Find communities in need and make a difference today.</p>
         </div>
-        <div class="row" style="gap: 16px;">
+        <div class="row">
             @foreach ($communities as $community)
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4"> <!-- Ensures 3 cards per row on medium screens and above -->
                     <div class="card border-danger shadow-sm h-100">
                         <div class="card-header">
                             {{ $community->name }}
