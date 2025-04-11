@@ -1,18 +1,53 @@
 <x-app-layout>
+    <style>
+        .card-header {
+            background-color: #dc3545;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+        }
 
-    <div class = "py-12">
-        <div class = "max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class = "bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    <h3 class = "font-semibold text-lg mb-4">Discover Communities to Help:</h3>
-                    <div class="space-y-6">
-                        @foreach ($communities as $community)
-                            
-                            <x-community-card :name="$community->name" :info="$community->info" :location="$community->location" />
-                        @endforeach
+        .card-body {
+            background-color: #f8f9fa;
+        }
+
+        .card-text {
+            font-size: 14px;
+        }
+
+        .location-text {
+            font-size: 13px;
+            color: #6c757d;
+        }
+
+        .navbar {
+            margin-bottom: 32px;
+        }
+    </style>
+
+    <div class="container" style="padding-top: 40px; padding-bottom: 40px;">
+        <div class="text-center" style="margin-bottom: 32px;">
+            <h3 class="text-danger fw-bold" style="font-size: 28px;">Discover Communities to Help</h3>
+            <p class="text-muted" style="font-size: 16px;">Find communities in need and make a difference today.</p>
+        </div>
+        <div class="row" style="gap: 16px;">
+            @foreach ($communities as $community)
+                <div class="col-md-4">
+                    <div class="card border-danger shadow-sm h-100">
+                        <div class="card-header">
+                            {{ $community->name }}
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                {{ $community->info }}
+                            </p>
+                            <p class="location-text">
+                                📍 {{ $community->location }}
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </x-app-layout>

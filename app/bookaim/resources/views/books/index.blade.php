@@ -1,22 +1,51 @@
- <x-app-layout>
-     <x-slot name="header">
-         <h2 class = "font-semibold text-xl text gray-800 leading-tight">
-             {{ __('All books') }}
-         </h2>
-     </x-slot>
+<x-app-layout>
+    <style>
+        .card-header {
+            background-color: #dc3545;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+        }
 
-     <div class = "py-12">
-         <div class = "max-w-7xl mx-auto sm:px-6 lg:px-8">
-             <div class = "bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                 <div class="p-6 text-gray-900">
-                     <h3 class = "font-semibold text-lg mb-4">List of books:</h3>
-                     <div class="grid gri-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                         @foreach ($books as $book)
-                             <x-book-card :name="$book->title" :condition="$book->condition" />
-                         @endforeach
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
- </x-app-layout>
+        .card-body {
+            background-color: white;
+            color: black;
+        }
+
+        .card-text {
+            font-size: 14px;
+        }
+
+        .location-text {
+            font-size: 13px;
+            color: #6c757d;
+        }
+
+        .navbar {
+            margin-bottom: 32px;
+        }
+    </style>
+
+    <div class="container" style="padding-top: 40px; padding-bottom: 40px;">
+        <div class="text-center" style="margin-bottom: 32px;">
+            <h3 class="text-danger fw-bold" style="font-size: 28px;">All Books</h3>
+            <p class="text-muted" style="font-size: 16px;">Browse through the collection of books available.</p>
+        </div>
+        <div class="row" style="gap: 16px;">
+            @foreach ($books as $book)
+                <div class="col-md-4">
+                    <div class="card border-danger shadow-sm h-100">
+                        <div class="card-header">
+                            {{ $book->title }}
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                Condition: {{ $book->condition }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</x-app-layout>
